@@ -11,7 +11,8 @@ create table users
 	id int primary key auto_increment,
     `name` nvarchar(150),
     username varchar(150),
-    `password` varchar(150)
+    `password` varchar(150),
+    enabled bit
 );
 
 create table users_roles

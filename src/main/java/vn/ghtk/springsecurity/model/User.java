@@ -5,6 +5,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
+
 @Entity
 @Table(name = "users")
 @Data
@@ -22,4 +24,13 @@ public class User implements Serializable {
     private String name;
     private String username;
     private String password;
+    private boolean enabled;
+
+    @ManyToMany
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "role_id") }
+    )
+    private Set<Role> roles;
 }
