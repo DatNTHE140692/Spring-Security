@@ -1,6 +1,7 @@
 package vn.ghtk.springsecurity.model;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,8 +10,9 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RequiredArgsConstructor
-public class UserDetailsImpl implements UserDetails {
+public class CustomUserDetails implements UserDetails {
 
     private final User user;
 

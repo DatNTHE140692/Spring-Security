@@ -27,6 +27,6 @@ public class Role implements Serializable {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 }
